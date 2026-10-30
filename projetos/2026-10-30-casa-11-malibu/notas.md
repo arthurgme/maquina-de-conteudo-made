@@ -25,6 +25,12 @@ Trechos da fala principal: `_trabalho/fala-principal_a.mov` (offset 3,0 s), `_b`
 - Transcrição: o modelo medium ouviu "830 diárias construídas"; o small ouviu "830 de área construída" (usado). Confirmar no áudio.
 - Render: ~3,5 min peças + ~2 min final.
 
+## Corte 2
+
+- Click nos 4 itens da lista (11,58 s, 13,06 s, 14,36 s, 15,30 s do vídeo).
+- Contagem "2, 1" de quem gravava (take da CTA, 0,8 a 1,9 s) removida: áudio da CTA começa em 2,13 s, com 0,83 s de silêncio antes.
+- "Elevador" não aparece na fala nem nos takes enviados.
+
 ## Para o Laboratório
 
 - Flash da piscina precisou de reenquadramento (zoom 1,35, fx 0,22, fy 0,80): takes horizontais largos pedem conferência de enquadramento na folha de contato.

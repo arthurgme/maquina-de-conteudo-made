@@ -45,6 +45,7 @@ Use `projetos/2026-10-30-casa-11-malibu/plano.json` como modelo. Todos os tempos
 | `audio` | peças na ordem: `fonte`, `ini`, `dur` ou `silencio` (segundos). A soma deve bater com o vídeo |
 | `legendas` | `blocos` (um por peça de áudio legendada, com as frases escritas à mão), `enfase` (palavras em itálico serifado), `corrigir` |
 | `selos` | `texto` (linhas: texto, y, tamanho) ou `contador` (número animado + linha de apoio). Tempos: número (segundos do vídeo) ou `{"fonte": "M", "t": 6.64}` (tempo do take, convertido) |
+| `efeitos` | sons pontuais: `som` (arquivo em `motor/sfx/`, ex. `click`), `t` (número ou `{"fonte", "t"}`), `ganho_db` (padrão -8). Mixados depois do tratamento de voz |
 | `cor` | filtro de cor base (padrão: aquecimento leve) |
 
 ## Desempenho
@@ -53,4 +54,4 @@ No ambiente do Claude (2 CPUs), decodificar 4K HEVC é o gargalo: cerca de 3,5 m
 
 ## Validação
 
-Mudou o motor? Rode o plano da Casa 11 Malibu e compare: as legendas devem sair idênticas e as peças com o mesmo MD5 (`ffmpeg -i peca.mp4 -map 0:v -f md5 -`), ou registre a mudança em `docs/05-registro-de-decisoes.md`.
+Mudou o motor? Rode `projetos/2026-10-30-casa-11-malibu/plano-corte1.json` e compare: as legendas devem sair idênticas e as peças com o mesmo MD5 (`ffmpeg -i peca.mp4 -map 0:v -f md5 -`), ou registre a mudança em `docs/05-registro-de-decisoes.md`.

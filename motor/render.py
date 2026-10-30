@@ -96,6 +96,49 @@ def peca_audio(i, a, fontes, pasta):
     return out
 
 
+def mapa_audio(plano):
+    """Pecas de audio na timeline: (fonte, ini, fim, inicio_na_saida)."""
+    pecas, t = [], 0.0
+    for a in plano['audio']:
+        if 'silencio' in a:
+            t += a['silencio']; continue
+        pecas.append((a['fonte'], a['ini'], a['ini'] + a['dur'], t)); t += a['dur']
+    return pecas
+
+
+def tempo_saida(v, pecas):
+    """Numero = segundos do video; {"fonte": "M", "t": 6.64} = tempo do take convertido."""
+    if not isinstance(v, dict):
+        return float(v)
+    for tol in (0, 0.05):  # primeiro a peca que contem o tempo; folga so se nenhuma contiver
+        for s, a, b, o in pecas:
+            if s == v['fonte'] and a - tol <= v['t'] < b + tol:
+                return o + (v['t'] - a)
+    sys.exit(f'{v} fora das pecas de audio')
+
+
+def trilha_efeitos(plano, total, out):
+    """Monta uma trilha estereo 48 kHz so com os efeitos (click etc.) nos tempos do plano."""
+    import wave
+    import numpy as np
+    pecas = mapa_audio(plano)
+    buf = np.zeros((int(total * 48000) + 48000, 2), np.float32)
+    cache = {}
+    for e in plano['efeitos']:
+        nome = e.get('som', 'click')
+        if nome not in cache:
+            with wave.open(os.path.join(AQUI, 'sfx', nome + '.wav')) as w:
+                cache[nome] = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, 2).astype(np.float32) / 32768
+        x = cache[nome] * 10 ** (e.get('ganho_db', -8) / 20)
+        i = int(round((tempo_saida(e['t'], pecas) + e.get('ajuste', 0)) * 48000))
+        buf[i:i + len(x)] += x[:len(buf) - i]
+    buf = buf[:int(total * 48000)]
+    with wave.open(out, 'wb') as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(48000)
+        w.writeframes((np.clip(buf, -1, 1) * 32767).astype(np.int16).tobytes())
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('plano'); ap.add_argument('--midia', required=True)
@@ -136,11 +179,18 @@ def main():
     saida = a.saida or os.path.join(a.trabalho, f"{plano['projeto']} - corte.mp4")
     af = plano.get('audio_final', 'highpass=f=80,afftdn=nf=-30,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=200,'
                                   'loudnorm=I=-14:TP=-1.5:LRA=9')
-    run(['ffmpeg', '-v', 'error', '-y', '-i', vcat, '-i', acat,
-         '-vf', f'ass={ass}:fontsdir={FONTES},fade=t=out:st={total - fim:.2f}:d={fim}',
-         '-af', f'{af},afade=t=out:st={total - fim:.2f}:d={fim}', '-ar', '48000',
-         '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
-         '-movflags', '+faststart', '-t', f'{total:.3f}', saida])
+    vf = f'ass={ass}:fontsdir={FONTES},fade=t=out:st={total - fim:.2f}:d={fim}'
+    enc = ['-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
+           '-movflags', '+faststart', '-t', f'{total:.3f}', saida]
+    if plano.get('efeitos'):
+        sfx = trilha_efeitos(plano, total, os.path.join(a.trabalho, 'efeitos.wav'))
+        fc = (f'[0:v]{vf}[vo];[1:a]{af},aresample=48000[voz];'
+              f'[voz][2:a]amix=inputs=2:normalize=0:duration=first,afade=t=out:st={total - fim:.2f}:d={fim}[ao]')
+        run(['ffmpeg', '-v', 'error', '-y', '-i', vcat, '-i', acat, '-i', sfx, '-filter_complex', fc,
+             '-map', '[vo]', '-map', '[ao]', '-ar', '48000'] + enc)
+    else:
+        run(['ffmpeg', '-v', 'error', '-y', '-i', vcat, '-i', acat, '-vf', vf,
+             '-af', f'{af},afade=t=out:st={total - fim:.2f}:d={fim}', '-ar', '48000'] + enc)
     print('SAIDA', saida, duracao(saida))
 
 

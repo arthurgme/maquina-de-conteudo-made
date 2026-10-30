@@ -5,7 +5,7 @@ Este repositório é a MÁQUINA DE CONTEÚDO - MADE: produção de reels de imó
 ## Modos de trabalho (cada um em um chat separado)
 
 - **Produção** (um chat por imóvel): seguir o fluxo de `docs/01-plano-do-processo.md` usando o motor como está. Não alterar `motor/` num chat de produção; se algo do motor precisar mudar, anotar em `projetos/<slug>/notas.md` para o Laboratório.
-- **Laboratório**: evoluir o motor e o manual visual. Toda mudança no motor precisa reproduzir o corte de referência (`projetos/2026-10-30-casa-11-malibu`) ou registrar em `docs/05-registro-de-decisoes.md` por que mudou.
+- **Laboratório**: evoluir o motor e o manual visual. Toda mudança no motor precisa reproduzir o corte de referência (`projetos/2026-10-30-casa-11-malibu/plano-corte1.json`) ou registrar em `docs/05-registro-de-decisoes.md` por que mudou.
 - **Processo**: ajustar plano, modelos e checklist. Registrar decisões em `docs/05-registro-de-decisoes.md`.
 
 ## Regras de produção

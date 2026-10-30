@@ -1,7 +1,7 @@
 {
   "projeto": "Casa 11 Malibu",
-  "versao": "corte 1",
-  "observacao": "Teste inicial (30/10/2026). Tempos de 'ini' sao sempre do take original. 'M' = fala principal, 'C' = CTA.",
+  "versao": "corte 2",
+  "observacao": "Corte 2 (30/10/2026): sem a contagem antes da CTA e com click nos ambientes da lista. Corte 1 em plano-corte1.json. Tempos de 'ini' sao sempre do take original. 'M' = fala principal, 'C' = CTA.",
   "fontes": {
     "M": {
       "arquivo": "takes/fala-principal.MOV",
@@ -47,7 +47,8 @@
     {"fonte": "M", "ini": 44.19, "dur": 12.93},
     {"fonte": "M", "ini": 60.83, "dur": 5.42},
     {"silencio": 8.00},
-    {"fonte": "C", "ini": 1.30, "dur": 7.15}
+    {"silencio": 0.83},
+    {"fonte": "C", "ini": 2.13, "dur": 6.32}
   ],
   "legendas": {
     "y": 1290,
@@ -61,10 +62,16 @@
       {"fonte": "M", "ini": 44.19, "frases": ["um terreno", "de mil metros", "e estamos falando", "de 830", "de área construída.",
                                               "E aqui você pode", "juntar a sua família,", "fazer aquela festa", "que você tanto sonha,"]},
       {"fonte": "M", "ini": 60.83, "frases": ["E dá uma chegada", "aqui comigo", "e vem ver essa sala", "maravilhosa de jantar."]},
-      {"fonte": "C", "ini": 1.30, "frases": ["Se você gostou", "dessa casa,", "clique aqui embaixo", "e vamos agendar", "uma visita",
+      {"fonte": "C", "ini": 2.13, "frases": ["Se você gostou", "dessa casa,", "clique aqui embaixo", "e vamos agendar", "uma visita",
                                              "que eu estou", "te aguardando."]}
     ]
   },
+  "efeitos": [
+    {"som": "click", "t": {"fonte": "M", "t": 34.76}, "ganho_db": -9, "nota": "sala de jantar"},
+    {"som": "click", "t": {"fonte": "M", "t": 36.24}, "ganho_db": -9, "nota": "salao de jogos"},
+    {"som": "click", "t": {"fonte": "M", "t": 37.54}, "ganho_db": -9, "nota": "piscina"},
+    {"som": "click", "t": {"fonte": "M", "t": 38.08}, "ganho_db": -9, "nota": "academia"}
+  ],
   "selos": [
     {"tipo": "texto", "ini": {"fonte": "M", "t": 6.64}, "fim": 8.45, "linhas": [["CONDOMÍNIO", 330, 92], ["MALIBU", 460, 150]]},
     {"tipo": "texto", "ini": {"fonte": "M", "t": 14.30}, "fim": 10.98, "linhas": [["SEGURANÇA", 360, 112]]},

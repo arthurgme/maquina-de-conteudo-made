@@ -12,3 +12,6 @@ saida/
 takes/
 __pycache__/
 .DS_Store
+
+# efeitos sonoros sintetizados do motor (pequenos, versionados)
+!motor/sfx/*.wav

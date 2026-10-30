@@ -2,6 +2,14 @@
 
 Mais recente no topo. Uma linha por decisão ou aprendizado; detalhes no `notas.md` do projeto.
 
+## 30/10/2026: Casa 11 Malibu (corte 2)
+
+- Click sonoro em cada ambiente da lista com flash (sala de jantar, salão de jogos, piscina, academia), na palavra dita, -9 dB. Som sintetizado (`motor/sfx/click.wav`), sem direitos de terceiros.
+- Removida a contagem "2, 1" de quem gravava, que vazava antes da fala da CTA: áudio da CTA começa no silêncio de 2,13 s do take (vídeo inalterado).
+- Lição de captação: quem grava não deve contar em voz alta; usar gesto.
+- Motor: efeitos sonoros (`efeitos` no plano.json), mixados depois do tratamento de voz para o compressor não achatar o click.
+- Motor: corrigida a conversão de tempo quando duas peças de áudio do mesmo take se encostam (o tempo caía na peça anterior pela folga de 0,05 s). Corte 1 continua idêntico (`plano-corte1.json`).
+
 ## 30/10/2026: teste Casa 11 Malibu (corte 1)
 
 - Edição por código (ffmpeg + plano.json) escolhida em vez de CapCut: precisão de corte pela transcrição e reprodutibilidade. CapCut não tem projeto que o Claude consiga gerar.

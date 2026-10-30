@@ -25,9 +25,10 @@ FIM = sum(v['dur'] for v in plano['video'])
 
 
 def out_time(src, tt):
-    for s, a, b, o in PECAS:
-        if s == src and a - 0.05 <= tt <= b + 0.05:
-            return o + (tt - a)
+    for tol in (0, 0.05):  # primeiro a peca que contem o tempo; folga so se nenhuma contiver
+        for s, a, b, o in PECAS:
+            if s == src and a - tol <= tt < b + tol:
+                return o + (tt - a)
     raise ValueError(f'{src}@{tt} fora das pecas de audio')
 
 

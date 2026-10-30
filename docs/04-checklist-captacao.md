@@ -17,6 +17,7 @@ Para quem grava. O objetivo é que a edição use quase tudo e não precise "sal
 - [ ] Não falar de costas para a câmera
 - [ ] Microfone de lapela, se tiver
 - [ ] 3 s de silêncio do ambiente (som da sala) no fim
+- [ ] Quem grava não conta em voz alta ("3, 2, 1"): usar sinal com a mão
 
 ## CTA
 
