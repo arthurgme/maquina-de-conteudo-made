@@ -1,0 +1,80 @@
+{
+  "projeto": "Casa 11 Malibu",
+  "versao": "corte 1",
+  "observacao": "Teste inicial (30/10/2026). Tempos de 'ini' sao sempre do take original. 'M' = fala principal, 'C' = CTA.",
+  "fontes": {
+    "M": {
+      "arquivo": "takes/fala-principal.MOV",
+      "trechos": [
+        {"arquivo": "_trabalho/fala-principal_a.mov", "offset": 3.0},
+        {"arquivo": "_trabalho/fala-principal_b.mov", "offset": 33.0},
+        {"arquivo": "_trabalho/fala-principal_c.mov", "offset": 59.5}
+      ]
+    },
+    "C": {"arquivo": "takes/cta-piscina.MOV"},
+    "salao_jogos": {"arquivo": "takes/salao-de-jogos.MOV"},
+    "academia": {"arquivo": "takes/academia.MOV"},
+    "cozinha": {"arquivo": "takes/cozinha.MOV"},
+    "adega": {"arquivo": "takes/adega.MOV"},
+    "jardim_piscina": {"arquivo": "takes/jardim-piscina.MOV"},
+    "living": {"arquivo": "takes/living.MOV"},
+    "sala_jantar": {"arquivo": "takes/sala-de-jantar.MOV"}
+  },
+  "cor": "colortemperature=temperature=5200:mix=0.6,eq=contrast=1.05:saturation=1.12:gamma=1.02",
+  "video": [
+    {"id": "v01", "bloco": "gancho", "fonte": "M", "ini": 3.93, "dur": 8.52, "zoom": [1.0, 1.12], "fy": 0.45},
+    {"id": "v02", "bloco": "condominio", "fonte": "M", "ini": 14.12, "dur": 2.48, "zoom": [1.45, 1.45], "fy": 0.30},
+    {"id": "v03", "bloco": "lista", "fonte": "M", "ini": 34.18, "dur": 0.58, "fy": 0.45},
+    {"id": "v04", "bloco": "lista: sala de jantar", "fonte": "M", "ini": 67.0, "dur": 1.48, "zoom": [1.1, 1.1]},
+    {"id": "v05", "bloco": "lista: salao de jogos", "fonte": "salao_jogos", "ini": 1.0, "dur": 1.30, "zoom": [1.0, 1.05]},
+    {"id": "v06", "bloco": "lista: piscina", "fonte": "jardim_piscina", "ini": 1.0, "dur": 0.94, "vel": 0.5, "zoom": [1.35, 1.35], "fx": [0.22, 0.22], "fy": 0.80},
+    {"id": "v07", "bloco": "lista: academia", "fonte": "academia", "ini": 0.5, "dur": 1.25, "zoom": [1.0, 1.05]},
+    {"id": "v08", "bloco": "terreno + familia", "fonte": "M", "ini": 44.19, "dur": 8.89, "zoom": [1.0, 1.12], "fy": 0.45},
+    {"id": "v09", "bloco": "cobertura 'fazer aquela festa'", "fonte": "living", "ini": 0.8, "dur": 4.04, "vel": 0.5, "fx": [0.35, 0.62]},
+    {"id": "v10", "bloco": "convite + porta", "fonte": "M", "ini": 60.83, "dur": 5.42},
+    {"id": "v11", "bloco": "vitrine", "fonte": "sala_jantar", "ini": 0.8, "dur": 2.0, "vel": 0.5, "zoom": [1.0, 1.06]},
+    {"id": "v12", "bloco": "vitrine", "fonte": "cozinha", "ini": 0.5, "dur": 2.0, "vel": 0.5, "zoom": [1.0, 1.05]},
+    {"id": "v13", "bloco": "vitrine", "fonte": "adega", "ini": 0.5, "dur": 2.0, "vel": 0.5, "zoom": [1.0, 1.05], "cor_extra": ",eq=brightness=0.05:gamma=1.35"},
+    {"id": "v14", "bloco": "vitrine", "fonte": "jardim_piscina", "ini": 2.0, "dur": 2.0, "vel": 0.5, "fx": [0.0, 0.35]},
+    {"id": "v15", "bloco": "cta", "fonte": "C", "ini": 1.30, "dur": 7.15, "zoom": [1.0, 1.6], "fy": 0.40}
+  ],
+  "audio": [
+    {"fonte": "M", "ini": 3.93, "dur": 8.52},
+    {"fonte": "M", "ini": 14.12, "dur": 2.48},
+    {"fonte": "M", "ini": 34.18, "dur": 3.87},
+    {"silencio": 0.40},
+    {"fonte": "M", "ini": 38.05, "dur": 1.28},
+    {"fonte": "M", "ini": 44.19, "dur": 12.93},
+    {"fonte": "M", "ini": 60.83, "dur": 5.42},
+    {"silencio": 8.00},
+    {"fonte": "C", "ini": 1.30, "dur": 7.15}
+  ],
+  "legendas": {
+    "y": 1290,
+    "enfase": ["mansão", "malibu", "cobiçado", "privilegiado", "mil", "metros", "família", "festa", "sonha",
+               "comigo", "maravilhosa", "jantar", "visita", "aguardando"],
+    "enfase_por_fonte": {"C": ["casa"]},
+    "corrigir": {},
+    "blocos": [
+      {"fonte": "M", "ini": 3.93, "frases": ["hoje eu estou aqui", "nessa linda mansão", "dentro do Malibu,", "no quadrilátero",
+                                             "mais cobiçado", "das Américas.", "E é um condomínio", "privilegiado."]},
+      {"fonte": "M", "ini": 44.19, "frases": ["um terreno", "de mil metros", "e estamos falando", "de 830", "de área construída.",
+                                              "E aqui você pode", "juntar a sua família,", "fazer aquela festa", "que você tanto sonha,"]},
+      {"fonte": "M", "ini": 60.83, "frases": ["E dá uma chegada", "aqui comigo", "e vem ver essa sala", "maravilhosa de jantar."]},
+      {"fonte": "C", "ini": 1.30, "frases": ["Se você gostou", "dessa casa,", "clique aqui embaixo", "e vamos agendar", "uma visita",
+                                             "que eu estou", "te aguardando."]}
+    ]
+  },
+  "selos": [
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 6.64}, "fim": 8.45, "linhas": [["CONDOMÍNIO", 330, 92], ["MALIBU", 460, 150]]},
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 14.30}, "fim": 10.98, "linhas": [["SEGURANÇA", 360, 112]]},
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 15.74}, "fim": 10.98, "linhas": [["TRANQUILIDADE", 490, 112]]},
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 34.76}, "fim": 13.06, "fade": [60, 60], "linhas": [["SALA DE JANTAR", 900, 118]]},
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 36.24}, "fim": 14.36, "fade": [60, 60], "linhas": [["SALÃO DE JOGOS", 900, 118]]},
+    {"tipo": "texto", "ini": {"fonte": "M", "t": 37.54}, "fim": 15.30, "fade": [60, 60], "linhas": [["PISCINA", 900, 118]]},
+    {"tipo": "texto", "ini": 15.30, "fim": 16.55, "fade": [60, 120], "linhas": [["ACADEMIA", 900, 118]]},
+    {"tipo": "contador", "valor": 1000, "ini": {"fonte": "M", "t": 45.06}, "fim": 22.6, "y": 330, "apoio": "de terreno", "y_apoio": 440},
+    {"tipo": "contador", "valor": 830, "ini": {"fonte": "M", "t": 47.08}, "fim": 22.6, "y": 610, "apoio": "construídos", "y_apoio": 720},
+    {"tipo": "texto", "ini": {"fonte": "C", "t": 5.82}, "fim": "fim", "fade": [120, 300], "linhas": [["AGENDE", 330, 140], ["SUA VISITA", 470, 140]]}
+  ]
+}

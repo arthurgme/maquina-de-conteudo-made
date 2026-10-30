@@ -1,0 +1,14 @@
+# vídeos e áudio ficam na pasta de mídia do Mac, nunca no repositório
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.m4v
+*.wav
+*.mp3
+*.aac
+_trabalho/
+saida/
+takes/
+__pycache__/
+.DS_Store
