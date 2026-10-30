@@ -45,7 +45,7 @@ Use `projetos/2026-10-30-casa-11-malibu/plano.json` como modelo. Todos os tempos
 | `audio` | peças na ordem: `fonte`, `ini`, `dur` ou `silencio` (segundos). A soma deve bater com o vídeo |
 | `legendas` | `blocos` (um por peça de áudio legendada, com as frases escritas à mão), `enfase` (palavras em itálico serifado), `corrigir` |
 | `selos` | `texto` (linhas: texto, y, tamanho) ou `contador` (número animado + linha de apoio). Tempos: número (segundos do vídeo) ou `{"fonte": "M", "t": 6.64}` (tempo do take, convertido) |
-| `efeitos` | sons pontuais: `som` (arquivo em `motor/sfx/`, ex. `click`), `t` (número ou `{"fonte", "t"}`), `ganho_db` (padrão -8). Mixados depois do tratamento de voz |
+| `efeitos` | sons pontuais: `som` (arquivo em `motor/sfx/`, ex. `mouse-click`; lista e licenças em `motor/sfx/LEIAME.md`), `t` (número ou `{"fonte", "t"}`), `ganho_db` (padrão -8). Mixados depois do tratamento de voz |
 | `cor` | filtro de cor base (padrão: aquecimento leve) |
 
 ## Desempenho

@@ -2,6 +2,11 @@
 
 Mais recente no topo. Uma linha por decisão ou aprendizado; detalhes no `notas.md` do projeto.
 
+## 30/10/2026: Casa 11 Malibu (corte 3)
+
+- Click sintetizado reprovado (soou inventado). Trocado por gravação real de clique de mouse, CC0 (`motor/sfx/mouse-click.wav`, origem em `motor/sfx/LEIAME.md`), -7 dB.
+- Regra: efeitos sonoros sempre de gravação real com licença livre, nunca sintetizados.
+
 ## 30/10/2026: Casa 11 Malibu (corte 2)
 
 - Click sonoro em cada ambiente da lista com flash (sala de jantar, salão de jogos, piscina, academia), na palavra dita, -9 dB. Som sintetizado (`motor/sfx/click.wav`), sem direitos de terceiros.

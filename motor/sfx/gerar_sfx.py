@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Gera os efeitos sonoros do motor (sintetizados, sem direitos de terceiros).
 
-Uso: python3 motor/sfx/gerar_sfx.py   -> motor/sfx/click.wav
+Uso: python3 motor/sfx/gerar_sfx.py   -> motor/sfx/click-sintetico.wav
 click: clique curto de interface (~80 ms): transiente de ruido agudo + corpo tonal + segundo clique mais fraco.
 """
 import os, wave
@@ -42,4 +42,4 @@ def salvar(nome, x):
 
 
 if __name__ == '__main__':
-    salvar('click.wav', click())
+    salvar('click-sintetico.wav', click())

@@ -51,7 +51,7 @@ Versão 1, extraída do corte 1 da Casa 11 Malibu (aprovado como base). Tudo ist
 
 ## Áudio
 
-- Click curto (`som: click`, -9 dB) em cada item da lista com flash, no início da palavra. Não usar em todo selo: só onde há corte rápido para um ambiente.
+- Clique real de mouse (`som: mouse-click`, -7 dB) em cada item da lista com flash, no início da palavra. Sons sintetizados soaram artificiais: usar gravações reais (CC0). Não usar em todo selo: só onde há corte rápido para um ambiente.
 
 - Voz: passa-alta 80 Hz, redução de ruído leve, compressor suave, loudnorm -14 LUFS.
 - Entregar sem trilha, salvo pedido. Vitrine fica em silêncio para receber o áudio escolhido no Instagram.

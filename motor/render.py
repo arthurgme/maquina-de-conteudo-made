@@ -125,7 +125,7 @@ def trilha_efeitos(plano, total, out):
     buf = np.zeros((int(total * 48000) + 48000, 2), np.float32)
     cache = {}
     for e in plano['efeitos']:
-        nome = e.get('som', 'click')
+        nome = e.get('som', 'mouse-click')
         if nome not in cache:
             with wave.open(os.path.join(AQUI, 'sfx', nome + '.wav')) as w:
                 cache[nome] = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, 2).astype(np.float32) / 32768

@@ -31,6 +31,10 @@ Trechos da fala principal: `_trabalho/fala-principal_a.mov` (offset 3,0 s), `_b`
 - Contagem "2, 1" de quem gravava (take da CTA, 0,8 a 1,9 s) removida: áudio da CTA começa em 2,13 s, com 0,83 s de silêncio antes.
 - "Elevador" não aparece na fala nem nos takes enviados.
 
+## Corte 3
+
+- Click sintetizado trocado por clique real de mouse (CC0), -7 dB, nos mesmos 4 pontos.
+
 ## Para o Laboratório
 
 - Flash da piscina precisou de reenquadramento (zoom 1,35, fx 0,22, fy 0,80): takes horizontais largos pedem conferência de enquadramento na folha de contato.
