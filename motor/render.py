@@ -73,10 +73,18 @@ def peca_video(p, fontes, cor_base, pasta, forcar):
     if horiz:  # recorte vertical 9:16 com panoramica digital opcional
         cw = int(round(h * 9 / 16))
         f.append(f"crop={cw}:{h}:x='(iw-{cw})*({fx0}+({fx1}-{fx0})*t/{dur})':y=0")
-    z = f'({z0}+({z1}-{z0})*t/{dur})'
-    f.append(f"scale=w='trunc(1080*{z}/2)*2':h='trunc(1920*{z}/2)*2':eval=frame:flags=bicubic")
-    f.append(f"crop=1080:1920:x='(iw-1080)*{fx0 if not horiz else .5}':y='(ih-1920)*{fy}'")
-    f.append('fps=30,format=yuv420p,setsar=1')
+    if z0 == z1:  # zoom fixo: escala unica + recorte (tamanho constante, enquadramento exato)
+        f.append(f"scale=w='trunc(1080*{z0}/2)*2':h='trunc(1920*{z0}/2)*2':flags=bicubic")
+        fxv = f'({fx0}+({fx1}-{fx0})*t/{dur})' if not horiz else '0.5'
+        f.append(f"crop=1080:1920:x='(iw-1080)*{fxv}':y='(ih-1920)*{fy}'")
+        f.append('fps=30,format=yuv420p,setsar=1')
+    else:  # zoom animado: zoompan centra o recorte quadro a quadro (fx/fy = ponto de foco)
+        n = max(1, round(dur * 30))
+        fxz = f'({fx0}+({fx1}-{fx0})*on/{n})' if not horiz else '0.5'
+        f.append('fps=30')
+        f.append(f"zoompan=z='{z0}+({z1}-{z0})*on/{n}':x='(iw-iw/zoom)*{fxz}':y='(ih-ih/zoom)*{fy}'"
+                 f":d=1:s=1080x1920:fps=30")
+        f.append('format=yuv420p,setsar=1')
     vf = ','.join(f) + ',' + cor_base + p.get('cor_extra', '')
     run(['ffmpeg', '-v', 'error', '-y', '-ss', str(ss), '-t', str(dur * vel + 0.2), '-i', path, '-an',
          '-vf', vf, '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '17', out])

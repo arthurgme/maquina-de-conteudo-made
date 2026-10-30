@@ -5,7 +5,7 @@ Versão 1, extraída do corte 1 da Casa 11 Malibu (aprovado como base). Tudo ist
 ## Formato
 
 - Vertical 1080x1920, 30 fps, H.264, áudio AAC 192 kbps, voz em -14 LUFS
-- Duração alvo: cerca de 50 s
+- Duração: a que o conteúdo pede (referência ~50 s, sem cravar)
 
 ## Estrutura padrão: tour narrado (~50 s)
 
@@ -17,7 +17,7 @@ Versão 1, extraída do corte 1 da Casa 11 Malibu (aprovado como base). Tudo ist
 | 16–29 s | Diferencial | Números (terreno, área, suítes) em contador animado |
 | 29–35 s | Convite | "Vem comigo" + gesto (abrir porta, apontar) que leva à vitrine |
 | 35–43 s | Vitrine | 4 ambientes, 2 s cada, câmera lenta 50%, sem fala (só trilha) |
-| 43–50 s | CTA | Corretor(a) de frente, zoom progressivo até plano médio. Selo "AGENDE SUA VISITA" |
+| últimos ~6 s | CTA | Corretor(a) de frente, zoom progressivo centrado até plano médio. Começar ~0,4 s antes da fala e terminar ~0,3 s depois. Selo "AGENDE SUA VISITA" |
 
 ## Cortes
 

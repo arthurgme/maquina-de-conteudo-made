@@ -35,6 +35,11 @@ Trechos da fala principal: `_trabalho/fala-principal_a.mov` (offset 3,0 s), `_b`
 
 - Click sintetizado trocado por clique real de mouse (CC0), -7 dB, nos mesmos 4 pontos.
 
+## Corte 4
+
+- 48,8 s. CTA de 5,9 s (take C de 2,30 a 8,20 s), zoom 1,08 a 1,58 centrado.
+- Planos com zoom animado reprocessados com o enquadramento corrigido.
+
 ## Para o Laboratório
 
 - Flash da piscina precisou de reenquadramento (zoom 1,35, fx 0,22, fy 0,80): takes horizontais largos pedem conferência de enquadramento na folha de contato.

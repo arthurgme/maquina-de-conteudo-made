@@ -54,4 +54,4 @@ No ambiente do Claude (2 CPUs), decodificar 4K HEVC é o gargalo: cerca de 3,5 m
 
 ## Validação
 
-Mudou o motor? Rode `projetos/2026-10-30-casa-11-malibu/plano-corte1.json` e compare: as legendas devem sair idênticas e as peças com o mesmo MD5 (`ffmpeg -i peca.mp4 -map 0:v -f md5 -`), ou registre a mudança em `docs/05-registro-de-decisoes.md`.
+Mudou o motor? Rode `projetos/2026-10-30-casa-11-malibu/plano-corte1.json` e compare: as legendas devem sair idênticas e as peças de zoom fixo (v02, v03, v06) com o mesmo MD5 das renderizadas antes da mudança (`ffmpeg -i peca.mp4 -map 0:v -f md5 -`), ou registre a mudança em `docs/05-registro-de-decisoes.md`.

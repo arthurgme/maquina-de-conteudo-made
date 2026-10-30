@@ -2,6 +2,13 @@
 
 Mais recente no topo. Uma linha por decisão ou aprendizado; detalhes no `notas.md` do projeto.
 
+## 30/10/2026: Casa 11 Malibu (corte 4)
+
+- Duração deixa de ser fixa em 50 s: o vídeo tem o tamanho que o conteúdo pede (corte 4: 48,8 s).
+- CTA encurtada de 7,15 s para 5,9 s: começa 0,4 s antes da fala (em vez de ~1,5 s de caminhada) e termina 0,3 s depois do "aguardando". Fade final de 0,35 s.
+- Motor: corrigido o zoom animado. O recorte era calculado pelo tamanho do primeiro quadro, então o zoom crescia para a direita e para baixo (na CTA a corretora ia para a borda). Agora usa zoompan, centrado em fx/fy quadro a quadro. Zoom fixo continua pelo caminho antigo (peças v02, v03 e v06 do corte 1 seguem idênticas); peças com zoom animado do corte 1 mudaram de propósito (enquadramento corrigido).
+- Motor: `fx` [início, fim] agora também anima em takes verticais (acompanhar a pessoa).
+
 ## 30/10/2026: Casa 11 Malibu (corte 3)
 
 - Click sintetizado reprovado (soou inventado). Trocado por gravação real de clique de mouse, CC0 (`motor/sfx/mouse-click.wav`, origem em `motor/sfx/LEIAME.md`), -7 dB.

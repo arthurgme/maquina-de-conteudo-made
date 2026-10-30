@@ -1,7 +1,7 @@
 {
   "projeto": "Casa 11 Malibu",
-  "versao": "corte 3",
-  "observacao": "Corte 3 (30/10/2026): sem a contagem antes da CTA e com clique real de mouse nos ambientes da lista. Corte 1 em plano-corte1.json. Tempos de 'ini' sao sempre do take original. 'M' = fala principal, 'C' = CTA.",
+  "versao": "corte 4",
+  "observacao": "Corte 4 (30/10/2026): CTA encurtada (começa perto da fala, termina logo após), clique real de mouse nos ambientes da lista. Corte 1 em plano-corte1.json. Tempos de 'ini' sao sempre do take original. 'M' = fala principal, 'C' = CTA.",
   "fontes": {
     "M": {
       "arquivo": "takes/fala-principal.MOV",
@@ -20,6 +20,7 @@
     "living": {"arquivo": "takes/living.MOV"},
     "sala_jantar": {"arquivo": "takes/sala-de-jantar.MOV"}
   },
+  "fade_final": 0.35,
   "cor": "colortemperature=temperature=5200:mix=0.6,eq=contrast=1.05:saturation=1.12:gamma=1.02",
   "video": [
     {"id": "v01", "bloco": "gancho", "fonte": "M", "ini": 3.93, "dur": 8.52, "zoom": [1.0, 1.12], "fy": 0.45},
@@ -36,7 +37,7 @@
     {"id": "v12", "bloco": "vitrine", "fonte": "cozinha", "ini": 0.5, "dur": 2.0, "vel": 0.5, "zoom": [1.0, 1.05]},
     {"id": "v13", "bloco": "vitrine", "fonte": "adega", "ini": 0.5, "dur": 2.0, "vel": 0.5, "zoom": [1.0, 1.05], "cor_extra": ",eq=brightness=0.05:gamma=1.35"},
     {"id": "v14", "bloco": "vitrine", "fonte": "jardim_piscina", "ini": 2.0, "dur": 2.0, "vel": 0.5, "fx": [0.0, 0.35]},
-    {"id": "v15", "bloco": "cta", "fonte": "C", "ini": 1.30, "dur": 7.15, "zoom": [1.0, 1.6], "fy": 0.40}
+    {"id": "v15", "bloco": "cta", "fonte": "C", "ini": 2.30, "dur": 5.90, "zoom": [1.08, 1.58], "fy": 0.40}
   ],
   "audio": [
     {"fonte": "M", "ini": 3.93, "dur": 8.52},
@@ -47,8 +48,7 @@
     {"fonte": "M", "ini": 44.19, "dur": 12.93},
     {"fonte": "M", "ini": 60.83, "dur": 5.42},
     {"silencio": 8.00},
-    {"silencio": 0.83},
-    {"fonte": "C", "ini": 2.13, "dur": 6.32}
+    {"fonte": "C", "ini": 2.30, "dur": 5.90}
   ],
   "legendas": {
     "y": 1290,
@@ -62,7 +62,7 @@
       {"fonte": "M", "ini": 44.19, "frases": ["um terreno", "de mil metros", "e estamos falando", "de 830", "de área construída.",
                                               "E aqui você pode", "juntar a sua família,", "fazer aquela festa", "que você tanto sonha,"]},
       {"fonte": "M", "ini": 60.83, "frases": ["E dá uma chegada", "aqui comigo", "e vem ver essa sala", "maravilhosa de jantar."]},
-      {"fonte": "C", "ini": 2.13, "frases": ["Se você gostou", "dessa casa,", "clique aqui embaixo", "e vamos agendar", "uma visita",
+      {"fonte": "C", "ini": 2.30, "frases": ["Se você gostou", "dessa casa,", "clique aqui embaixo", "e vamos agendar", "uma visita",
                                              "que eu estou", "te aguardando."]}
     ]
   },
